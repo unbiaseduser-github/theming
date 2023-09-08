@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Attribute to apply different text title styles on M2 and M3 -->
+    <attr name="themeDependantTitleStyle" format="reference"/>
+    <!-- Attribute to apply different filter chip styles on M2 and M3 -->
+    <attr name="themeDependantFilterChipStyle" format="reference"/>
+    <!-- Attribute to apply different input chip styles on M2 and M3 -->
+    <attr name="themeDependantInputChipStyle" format="reference"/>
+    <!-- Attribute to apply different suggestion chip styles on M2 and M3 -->
+    <attr name="themeDependantSuggestionChipStyle" format="reference"/>
+    <!-- Attribute to apply different assist chip styles on M2 and M3 -->
+    <attr name="themeDependantAssistChipStyle" format="reference"/>
+
+    <attr name="m2ColorPrimary" format="color"/>
+    <attr name="m2ColorPrimaryVariant" format="color"/>
+    <attr name="m2ColorOnPrimary" format="color"/>
+    <attr name="m2ColorSecondary" format="color"/>
+    <attr name="m2ColorSecondaryVariant" format="color"/>
+    <attr name="m2ColorOnSecondary" format="color"/>
+
+    <attr name="m3ColorPrimary" format="color"/>
+    <attr name="m3ColorOnPrimary" format="color"/>
+    <attr name="m3ColorPrimaryContainer" format="color"/>
+    <attr name="m3ColorOnPrimaryContainer" format="color"/>
+    <attr name="m3ColorSecondary" format="color"/>
+    <attr name="m3ColorOnSecondary" format="color"/>
+    <attr name="m3ColorSecondaryContainer" format="color"/>
+    <attr name="m3ColorOnSecondaryContainer" format="color"/>
+    <attr name="m3ColorTertiary" format="color"/>
+    <attr name="m3ColorOnTertiary" format="color"/>
+    <attr name="m3ColorTertiaryContainer" format="color"/>
+    <attr name="m3ColorOnTertiaryContainer" format="color"/>
+    <attr name="m3ColorError" format="color"/>
+    <attr name="m3ColorOnError" format="color"/>
+    <attr name="m3ColorErrorContainer" format="color"/>
+    <attr name="m3ColorOnErrorContainer" format="color"/>
+    <attr name="m3ColorBackground" format="color"/>
+    <attr name="m3ColorOnBackground" format="color"/>
+    <attr name="m3ColorSurface" format="color"/>
+    <attr name="m3ColorOnSurface" format="color"/>
+    <attr name="m3ColorSurfaceVariant" format="color"/>
+    <attr name="m3ColorOnSurfaceVariant" format="color"/>
+    <attr name="m3ColorOutline" format="color"/>
+
+</resources>

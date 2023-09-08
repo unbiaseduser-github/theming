@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ThemeColors.Blue" parent="">
+        <item name="m2ColorPrimary">@color/m2ColorPrimary_blue</item>
+        <item name="m2ColorPrimaryVariant">@color/m2ColorPrimaryVariant_blue</item>
+        <item name="m2ColorOnPrimary">@color/m2ColorOnPrimary_blue</item>
+        <item name="m2ColorSecondary">@color/m2ColorSecondary_blue</item>
+        <item name="m2ColorSecondaryVariant">@color/m2ColorSecondaryVariant_blue</item>
+        <item name="m2ColorOnSecondary">@color/m2ColorOnSecondary_blue</item>
+
+        <item name="m3ColorPrimary">@color/m3ColorPrimary_blue</item>
+        <item name="m3ColorOnPrimary">@color/m3ColorOnPrimary_blue</item>
+        <item name="m3ColorPrimaryContainer">@color/m3ColorPrimaryContainer_blue</item>
+        <item name="m3ColorOnPrimaryContainer">@color/m3ColorOnPrimaryContainer_blue</item>
+        <item name="m3ColorSecondary">@color/m3ColorSecondary_blue</item>
+        <item name="m3ColorOnSecondary">@color/m3ColorOnSecondary_blue</item>
+        <item name="m3ColorSecondaryContainer">@color/m3ColorSecondaryContainer_blue</item>
+        <item name="m3ColorOnSecondaryContainer">@color/m3ColorOnSecondaryContainer_blue</item>
+        <item name="m3ColorTertiary">@color/m3ColorTertiary_blue</item>
+        <item name="m3ColorOnTertiary">@color/m3ColorOnTertiary_blue</item>
+        <item name="m3ColorTertiaryContainer">@color/m3ColorTertiaryContainer_blue</item>
+        <item name="m3ColorOnTertiaryContainer">@color/m3ColorOnTertiaryContainer_blue</item>
+        <item name="m3ColorError">@color/m3ColorError_blue</item>
+        <item name="m3ColorOnError">@color/m3ColorOnError_blue</item>
+        <item name="m3ColorErrorContainer">@color/m3ColorErrorContainer_blue</item>
+        <item name="m3ColorOnErrorContainer">@color/m3ColorOnErrorContainer_blue</item>
+        <item name="m3ColorBackground">@color/m3ColorBackground_blue</item>
+        <item name="m3ColorOnBackground">@color/m3ColorOnBackground_blue</item>
+        <item name="m3ColorSurface">@color/m3ColorSurface_blue</item>
+        <item name="m3ColorOnSurface">@color/m3ColorOnSurface_blue</item>
+        <item name="m3ColorSurfaceVariant">@color/m3ColorSurfaceVariant_blue</item>
+        <item name="m3ColorOnSurfaceVariant">@color/m3ColorOnSurfaceVariant_blue</item>
+        <item name="m3ColorOutline">@color/m3ColorOutline_blue</item>
+    </style>
+
+    <style name="ThemeColors.Red" parent="">
+        <item name="m2ColorPrimary">@color/m2ColorPrimary_red</item>
+        <item name="m2ColorPrimaryVariant">@color/m2ColorPrimaryVariant_red</item>
+        <item name="m2ColorOnPrimary">@color/m2ColorOnPrimary_red</item>
+        <item name="m2ColorSecondary">@color/m2ColorSecondary_red</item>
+        <item name="m2ColorSecondaryVariant">@color/m2ColorSecondaryVariant_red</item>
+        <item name="m2ColorOnSecondary">@color/m2ColorOnSecondary_red</item>
+
+        <item name="m3ColorPrimary">@color/m3ColorPrimary_red</item>
+        <item name="m3ColorOnPrimary">@color/m3ColorOnPrimary_red</item>
+        <item name="m3ColorPrimaryContainer">@color/m3ColorPrimaryContainer_red</item>
+        <item name="m3ColorOnPrimaryContainer">@color/m3ColorOnPrimaryContainer_red</item>
+        <item name="m3ColorSecondary">@color/m3ColorSecondary_red</item>
+        <item name="m3ColorOnSecondary">@color/m3ColorOnSecondary_red</item>
+        <item name="m3ColorSecondaryContainer">@color/m3ColorSecondaryContainer_red</item>
+        <item name="m3ColorOnSecondaryContainer">@color/m3ColorOnSecondaryContainer_red</item>
+        <item name="m3ColorTertiary">@color/m3ColorTertiary_red</item>
+        <item name="m3ColorOnTertiary">@color/m3ColorOnTertiary_red</item>
+        <item name="m3ColorTertiaryContainer">@color/m3ColorTertiaryContainer_red</item>
+        <item name="m3ColorOnTertiaryContainer">@color/m3ColorOnTertiaryContainer_red</item>
+        <item name="m3ColorError">@color/m3ColorError_red</item>
+        <item name="m3ColorOnError">@color/m3ColorOnError_red</item>
+        <item name="m3ColorErrorContainer">@color/m3ColorErrorContainer_red</item>
+        <item name="m3ColorOnErrorContainer">@color/m3ColorOnErrorContainer_red</item>
+        <item name="m3ColorBackground">@color/m3ColorBackground_red</item>
+        <item name="m3ColorOnBackground">@color/m3ColorOnBackground_red</item>
+        <item name="m3ColorSurface">@color/m3ColorSurface_red</item>
+        <item name="m3ColorOnSurface">@color/m3ColorOnSurface_red</item>
+        <item name="m3ColorSurfaceVariant">@color/m3ColorSurfaceVariant_red</item>
+        <item name="m3ColorOnSurfaceVariant">@color/m3ColorOnSurfaceVariant_red</item>
+        <item name="m3ColorOutline">@color/m3ColorOutline_red</item>
+    </style>
+
+    <style name="ThemeColors.Green" parent="">
+        <item name="m2ColorPrimary">@color/m2ColorPrimary_green</item>
+        <item name="m2ColorPrimaryVariant">@color/m2ColorPrimaryVariant_green</item>
+        <item name="m2ColorOnPrimary">@color/m2ColorOnPrimary_green</item>
+        <item name="m2ColorSecondary">@color/m2ColorSecondary_green</item>
+        <item name="m2ColorSecondaryVariant">@color/m2ColorSecondaryVariant_green</item>
+        <item name="m2ColorOnSecondary">@color/m2ColorOnSecondary_green</item>
+
+        <item name="m3ColorPrimary">@color/m3ColorPrimary_green</item>
+        <item name="m3ColorOnPrimary">@color/m3ColorOnPrimary_green</item>
+        <item name="m3ColorPrimaryContainer">@color/m3ColorPrimaryContainer_green</item>
+        <item name="m3ColorOnPrimaryContainer">@color/m3ColorOnPrimaryContainer_green</item>
+        <item name="m3ColorSecondary">@color/m3ColorSecondary_green</item>
+        <item name="m3ColorOnSecondary">@color/m3ColorOnSecondary_green</item>
+        <item name="m3ColorSecondaryContainer">@color/m3ColorSecondaryContainer_green</item>
+        <item name="m3ColorOnSecondaryContainer">@color/m3ColorOnSecondaryContainer_green</item>
+        <item name="m3ColorTertiary">@color/m3ColorTertiary_green</item>
+        <item name="m3ColorOnTertiary">@color/m3ColorOnTertiary_green</item>
+        <item name="m3ColorTertiaryContainer">@color/m3ColorTertiaryContainer_green</item>
+        <item name="m3ColorOnTertiaryContainer">@color/m3ColorOnTertiaryContainer_green</item>
+        <item name="m3ColorError">@color/m3ColorError_green</item>
+        <item name="m3ColorOnError">@color/m3ColorOnError_green</item>
+        <item name="m3ColorErrorContainer">@color/m3ColorErrorContainer_green</item>
+        <item name="m3ColorOnErrorContainer">@color/m3ColorOnErrorContainer_green</item>
+        <item name="m3ColorBackground">@color/m3ColorBackground_green</item>
+        <item name="m3ColorOnBackground">@color/m3ColorOnBackground_green</item>
+        <item name="m3ColorSurface">@color/m3ColorSurface_green</item>
+        <item name="m3ColorOnSurface">@color/m3ColorOnSurface_green</item>
+        <item name="m3ColorSurfaceVariant">@color/m3ColorSurfaceVariant_green</item>
+        <item name="m3ColorOnSurfaceVariant">@color/m3ColorOnSurfaceVariant_green</item>
+        <item name="m3ColorOutline">@color/m3ColorOutline_green</item>
+    </style>
+
+    <style name="ThemeColors.Purple" parent="">
+        <item name="m2ColorPrimary">@color/m2ColorPrimary_purple</item>
+        <item name="m2ColorPrimaryVariant">@color/m2ColorPrimaryVariant_purple</item>
+        <item name="m2ColorOnPrimary">@color/m2ColorOnPrimary_purple</item>
+        <item name="m2ColorSecondary">@color/m2ColorSecondary_purple</item>
+        <item name="m2ColorSecondaryVariant">@color/m2ColorSecondaryVariant_purple</item>
+        <item name="m2ColorOnSecondary">@color/m2ColorOnSecondary_purple</item>
+
+        <item name="m3ColorPrimary">@color/m3ColorPrimary_purple</item>
+        <item name="m3ColorOnPrimary">@color/m3ColorOnPrimary_purple</item>
+        <item name="m3ColorPrimaryContainer">@color/m3ColorPrimaryContainer_purple</item>
+        <item name="m3ColorOnPrimaryContainer">@color/m3ColorOnPrimaryContainer_purple</item>
+        <item name="m3ColorSecondary">@color/m3ColorSecondary_purple</item>
+        <item name="m3ColorOnSecondary">@color/m3ColorOnSecondary_purple</item>
+        <item name="m3ColorSecondaryContainer">@color/m3ColorSecondaryContainer_purple</item>
+        <item name="m3ColorOnSecondaryContainer">@color/m3ColorOnSecondaryContainer_purple</item>
+        <item name="m3ColorTertiary">@color/m3ColorTertiary_purple</item>
+        <item name="m3ColorOnTertiary">@color/m3ColorOnTertiary_purple</item>
+        <item name="m3ColorTertiaryContainer">@color/m3ColorTertiaryContainer_purple</item>
+        <item name="m3ColorOnTertiaryContainer">@color/m3ColorOnTertiaryContainer_purple</item>
+        <item name="m3ColorError">@color/m3ColorError_purple</item>
+        <item name="m3ColorOnError">@color/m3ColorOnError_purple</item>
+        <item name="m3ColorErrorContainer">@color/m3ColorErrorContainer_purple</item>
+        <item name="m3ColorOnErrorContainer">@color/m3ColorOnErrorContainer_purple</item>
+        <item name="m3ColorBackground">@color/m3ColorBackground_purple</item>
+        <item name="m3ColorOnBackground">@color/m3ColorOnBackground_purple</item>
+        <item name="m3ColorSurface">@color/m3ColorSurface_purple</item>
+        <item name="m3ColorOnSurface">@color/m3ColorOnSurface_purple</item>
+        <item name="m3ColorSurfaceVariant">@color/m3ColorSurfaceVariant_purple</item>
+        <item name="m3ColorOnSurfaceVariant">@color/m3ColorOnSurfaceVariant_purple</item>
+        <item name="m3ColorOutline">@color/m3ColorOutline_purple</item>
+    </style>
+
+    <style name="ThemeColors.Orange" parent="">
+        <item name="m2ColorPrimary">@color/m2ColorPrimary_orange</item>
+        <item name="m2ColorPrimaryVariant">@color/m2ColorPrimaryVariant_orange</item>
+        <item name="m2ColorOnPrimary">@color/m2ColorOnPrimary_orange</item>
+        <item name="m2ColorSecondary">@color/m2ColorSecondary_orange</item>
+        <item name="m2ColorSecondaryVariant">@color/m2ColorSecondaryVariant_orange</item>
+        <item name="m2ColorOnSecondary">@color/m2ColorOnSecondary_orange</item>
+
+        <item name="m3ColorPrimary">@color/m3ColorPrimary_orange</item>
+        <item name="m3ColorOnPrimary">@color/m3ColorOnPrimary_orange</item>
+        <item name="m3ColorPrimaryContainer">@color/m3ColorPrimaryContainer_orange</item>
+        <item name="m3ColorOnPrimaryContainer">@color/m3ColorOnPrimaryContainer_orange</item>
+        <item name="m3ColorSecondary">@color/m3ColorSecondary_orange</item>
+        <item name="m3ColorOnSecondary">@color/m3ColorOnSecondary_orange</item>
+        <item name="m3ColorSecondaryContainer">@color/m3ColorSecondaryContainer_orange</item>
+        <item name="m3ColorOnSecondaryContainer">@color/m3ColorOnSecondaryContainer_orange</item>
+        <item name="m3ColorTertiary">@color/m3ColorTertiary_orange</item>
+        <item name="m3ColorOnTertiary">@color/m3ColorOnTertiary_orange</item>
+        <item name="m3ColorTertiaryContainer">@color/m3ColorTertiaryContainer_orange</item>
+        <item name="m3ColorOnTertiaryContainer">@color/m3ColorOnTertiaryContainer_orange</item>
+        <item name="m3ColorError">@color/m3ColorError_orange</item>
+        <item name="m3ColorOnError">@color/m3ColorOnError_orange</item>
+        <item name="m3ColorErrorContainer">@color/m3ColorErrorContainer_orange</item>
+        <item name="m3ColorOnErrorContainer">@color/m3ColorOnErrorContainer_orange</item>
+        <item name="m3ColorBackground">@color/m3ColorBackground_orange</item>
+        <item name="m3ColorOnBackground">@color/m3ColorOnBackground_orange</item>
+        <item name="m3ColorSurface">@color/m3ColorSurface_orange</item>
+        <item name="m3ColorOnSurface">@color/m3ColorOnSurface_orange</item>
+        <item name="m3ColorSurfaceVariant">@color/m3ColorSurfaceVariant_orange</item>
+        <item name="m3ColorOnSurfaceVariant">@color/m3ColorOnSurfaceVariant_orange</item>
+        <item name="m3ColorOutline">@color/m3ColorOutline_orange</item>
+    </style>
+
+    <style name="ThemeColors.Pink" parent="">
+        <item name="m2ColorPrimary">@color/m2ColorPrimary_pink</item>
+        <item name="m2ColorPrimaryVariant">@color/m2ColorPrimaryVariant_pink</item>
+        <item name="m2ColorOnPrimary">@color/m2ColorOnPrimary_pink</item>
+        <item name="m2ColorSecondary">@color/m2ColorSecondary_pink</item>
+        <item name="m2ColorSecondaryVariant">@color/m2ColorSecondaryVariant_pink</item>
+        <item name="m2ColorOnSecondary">@color/m2ColorOnSecondary_pink</item>
+
+        <item name="m3ColorPrimary">@color/m3ColorPrimary_pink</item>
+        <item name="m3ColorOnPrimary">@color/m3ColorOnPrimary_pink</item>
+        <item name="m3ColorPrimaryContainer">@color/m3ColorPrimaryContainer_pink</item>
+        <item name="m3ColorOnPrimaryContainer">@color/m3ColorOnPrimaryContainer_pink</item>
+        <item name="m3ColorSecondary">@color/m3ColorSecondary_pink</item>
+        <item name="m3ColorOnSecondary">@color/m3ColorOnSecondary_pink</item>
+        <item name="m3ColorSecondaryContainer">@color/m3ColorSecondaryContainer_pink</item>
+        <item name="m3ColorOnSecondaryContainer">@color/m3ColorOnSecondaryContainer_pink</item>
+        <item name="m3ColorTertiary">@color/m3ColorTertiary_pink</item>
+        <item name="m3ColorOnTertiary">@color/m3ColorOnTertiary_pink</item>
+        <item name="m3ColorTertiaryContainer">@color/m3ColorTertiaryContainer_pink</item>
+        <item name="m3ColorOnTertiaryContainer">@color/m3ColorOnTertiaryContainer_pink</item>
+        <item name="m3ColorError">@color/m3ColorError_pink</item>
+        <item name="m3ColorOnError">@color/m3ColorOnError_pink</item>
+        <item name="m3ColorErrorContainer">@color/m3ColorErrorContainer_pink</item>
+        <item name="m3ColorOnErrorContainer">@color/m3ColorOnErrorContainer_pink</item>
+        <item name="m3ColorBackground">@color/m3ColorBackground_pink</item>
+        <item name="m3ColorOnBackground">@color/m3ColorOnBackground_pink</item>
+        <item name="m3ColorSurface">@color/m3ColorSurface_pink</item>
+        <item name="m3ColorOnSurface">@color/m3ColorOnSurface_pink</item>
+        <item name="m3ColorSurfaceVariant">@color/m3ColorSurfaceVariant_pink</item>
+        <item name="m3ColorOnSurfaceVariant">@color/m3ColorOnSurfaceVariant_pink</item>
+        <item name="m3ColorOutline">@color/m3ColorOutline_pink</item>
+    </style>
+
+    <style name="AppTheme.Material2.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="textAllCaps">false</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+
+        <item name="themeDependantTitleStyle">@style/TextAppearance.AppCompat.Title</item>
+        <item name="themeDependantFilterChipStyle">@style/Widget.MaterialComponents.Chip.Filter</item>
+        <item name="themeDependantInputChipStyle">@style/Widget.MaterialComponents.Chip.Entry</item>
+        <item name="themeDependantSuggestionChipStyle">@style/Widget.MaterialComponents.Chip.Choice</item>
+        <item name="themeDependantAssistChipStyle">@style/Widget.MaterialComponents.Chip.Action</item>
+    </style>
+
+    <style name="AppTheme.Material2" parent="AppTheme.Material2.Base">
+        <item name="colorPrimary">?attr/m2ColorPrimary</item>
+        <item name="colorPrimaryVariant">?attr/m2ColorPrimaryVariant</item>
+        <item name="colorOnPrimary">?attr/m2ColorOnPrimary</item>
+        <item name="colorSecondary">?attr/m2ColorSecondary</item>
+        <item name="colorSecondaryVariant">?attr/m2ColorSecondaryVariant</item>
+        <item name="colorOnSecondary">?attr/m2ColorOnSecondary</item>
+    </style>
+
+    <style name="AppTheme.Material2.Fallback" parent="AppTheme.Material2.Base">
+        <item name="colorPrimary">@color/m2ColorPrimary_blue</item>
+        <item name="colorPrimaryVariant">@color/m2ColorPrimaryVariant_blue</item>
+        <item name="colorOnPrimary">@color/m2ColorOnPrimary_blue</item>
+        <item name="colorSecondary">@color/m2ColorSecondary_blue</item>
+        <item name="colorSecondaryVariant">@color/m2ColorSecondaryVariant_blue</item>
+        <item name="colorOnSecondary">@color/m2ColorOnSecondary_blue</item>
+    </style>
+
+    <style name="AppTheme.Material3.Base" parent="Theme.Material3.DynamicColors.DayNight">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="themeDependantTitleStyle">@style/TextAppearance.MaterialComponents.Headline5</item>
+        <item name="themeDependantFilterChipStyle">@style/Widget.Material3.Chip.Filter</item>
+        <item name="themeDependantInputChipStyle">@style/Widget.Material3.Chip.Input</item>
+        <item name="themeDependantSuggestionChipStyle">@style/Widget.Material3.Chip.Suggestion</item>
+        <item name="themeDependantAssistChipStyle">@style/Widget.Material3.Chip.Assist</item>
+
+        <item name="android:textAppearanceListItem">@style/TextAppearance.Preference.Title</item>
+        <item name="android:textAppearanceListItemSecondary">@style/TextAppearance.Preference.ColorSecondary</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme.Material3</item>
+        <item name="preferenceStyle">@style/Preference.Material3</item>
+        <item name="checkBoxPreferenceStyle">@style/Preference.CheckBoxPreference.Material3</item>
+        <item name="dialogPreferenceStyle">@style/Preference.DialogPreference.Material3</item>
+        <item name="dropdownPreferenceStyle">@style/Preference.DropDown.Material</item>
+        <item name="editTextPreferenceStyle">@style/Preference.DialogPreference.EditTextPreference.Material3</item>
+        <item name="preferenceCategoryStyle">@style/Preference.Category.Material3</item>
+        <item name="preferenceCategoryTitleTextAppearance">?attr/textAppearanceLabelLarge</item>
+        <item name="preferenceCategoryTitleTextColor">?attr/colorPrimary</item>
+        <item name="preferenceFragmentCompatStyle">@style/PreferenceFragment.Material</item>
+        <item name="preferenceFragmentListStyle">@style/PreferenceFragmentList.Material</item>
+        <item name="preferenceFragmentStyle">@style/PreferenceFragment.Material</item>
+        <item name="preferenceScreenStyle">@style/Preference.PreferenceScreen.Material3</item>
+        <item name="seekBarPreferenceStyle">@style/Preference.SeekBarPreference.Material</item>
+        <item name="switchPreferenceStyle">@style/Preference.SwitchPreference.Material3</item>
+        <item name="switchPreferenceCompatStyle">@style/Preference.SwitchPreferenceCompat.Material3</item>
+    </style>
+
+    <style name="AppTheme.Material3.DynamicColors" parent="AppTheme.Material3.Base"/>
+
+    <style name="AppTheme.Material3.CustomColors" parent="AppTheme.Material3.Base">
+        <item name="colorPrimary">?attr/m3ColorPrimary</item>
+        <item name="colorOnPrimary">?attr/m3ColorOnPrimary</item>
+        <item name="colorPrimaryContainer">?attr/m3ColorPrimaryContainer</item>
+        <item name="colorOnPrimaryContainer">?attr/m3ColorOnPrimaryContainer</item>
+        <item name="colorSecondary">?attr/m3ColorSecondary</item>
+        <item name="colorOnSecondary">?attr/m3ColorOnSecondary</item>
+        <item name="colorSecondaryContainer">?attr/m3ColorSecondaryContainer</item>
+        <item name="colorOnSecondaryContainer">?attr/m3ColorOnSecondaryContainer</item>
+        <item name="colorTertiary">?attr/m3ColorTertiary</item>
+        <item name="colorOnTertiary">?attr/m3ColorOnTertiary</item>
+        <item name="colorTertiaryContainer">?attr/m3ColorTertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">?attr/m3ColorOnTertiaryContainer</item>
+        <item name="colorError">?attr/m3ColorError</item>
+        <item name="colorOnError">?attr/m3ColorOnError</item>
+        <item name="colorErrorContainer">?attr/m3ColorErrorContainer</item>
+        <item name="colorOnErrorContainer">?attr/m3ColorOnErrorContainer</item>
+        <item name="android:colorBackground">?attr/m3ColorBackground</item>
+        <item name="colorOnBackground">?attr/m3ColorOnBackground</item>
+        <item name="colorSurface">?attr/m3ColorSurface</item>
+        <item name="colorOnSurface">?attr/m3ColorOnSurface</item>
+        <item name="colorSurfaceVariant">?attr/m3ColorSurfaceVariant</item>
+        <item name="colorOnSurfaceVariant">?attr/m3ColorOnSurfaceVariant</item>
+        <item name="colorOutline">?attr/m3ColorOutline</item>
+    </style>
+
+    <style name="AppTheme.Material3.Fallback" parent="AppTheme.Material3.Base">
+        <item name="colorPrimary">@color/m3ColorPrimary_blue</item>
+        <item name="colorOnPrimary">@color/m3ColorOnPrimary_blue</item>
+        <item name="colorPrimaryContainer">@color/m3ColorPrimaryContainer_blue</item>
+        <item name="colorOnPrimaryContainer">@color/m3ColorOnPrimaryContainer_blue</item>
+        <item name="colorSecondary">@color/m3ColorSecondary_blue</item>
+        <item name="colorOnSecondary">@color/m3ColorOnSecondary_blue</item>
+        <item name="colorSecondaryContainer">@color/m3ColorSecondaryContainer_blue</item>
+        <item name="colorOnSecondaryContainer">@color/m3ColorOnSecondaryContainer_blue</item>
+        <item name="colorTertiary">@color/m3ColorTertiary_blue</item>
+        <item name="colorOnTertiary">@color/m3ColorOnTertiary_blue</item>
+        <item name="colorTertiaryContainer">@color/m3ColorTertiaryContainer_blue</item>
+        <item name="colorOnTertiaryContainer">@color/m3ColorOnTertiaryContainer_blue</item>
+        <item name="colorError">@color/m3ColorError_blue</item>
+        <item name="colorOnError">@color/m3ColorOnError_blue</item>
+        <item name="colorErrorContainer">@color/m3ColorErrorContainer_blue</item>
+        <item name="colorOnErrorContainer">@color/m3ColorOnErrorContainer_blue</item>
+        <item name="android:colorBackground">@color/m3ColorBackground_blue</item>
+        <item name="colorOnBackground">@color/m3ColorOnBackground_blue</item>
+        <item name="colorSurface">@color/m3ColorSurface_blue</item>
+        <item name="colorOnSurface">@color/m3ColorOnSurface_blue</item>
+        <item name="colorSurfaceVariant">@color/m3ColorSurfaceVariant_blue</item>
+        <item name="colorOnSurfaceVariant">@color/m3ColorOnSurfaceVariant_blue</item>
+        <item name="colorOutline">@color/m3ColorOutline_blue</item>
+    </style>
+
+    <style name="AlertDialogTheme.Material3" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="dialogCornerRadius">36dp</item>
+    </style>
+    
+    <style name="Widget.Material3.CardView.Preference" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">24dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <style name="Preference.Material3" parent="Preference.Material">
+        <item name="android:layout">@layout/m3_preference</item>
+    </style>
+
+    <style name="Preference.Category.Material3" parent="Preference.Category.Material">
+        <item name="android:layout">@layout/m3_preference_category</item>
+        <item name="allowDividerAbove">false</item>
+    </style>
+
+    <style name="Preference.CheckBoxPreference.Material3" parent="Preference.CheckBoxPreference.Material">
+        <item name="android:layout">@layout/m3_preference</item>
+    </style>
+
+    <style name="Preference.DialogPreference.Material3" parent="Preference.DialogPreference.Material">
+        <item name="android:layout">@layout/m3_preference</item>
+    </style>
+
+    <style name="Preference.DialogPreference.EditTextPreference.Material3" parent="Preference.DialogPreference.EditTextPreference.Material">
+        <item name="android:layout">@layout/m3_preference</item>
+    </style>
+
+    <style name="Preference.PreferenceScreen.Material3" parent="Preference.PreferenceScreen.Material">
+        <item name="android:layout">@layout/m3_preference</item>
+    </style>
+
+    <style name="Preference.SwitchPreference.Material3" parent="Preference.SwitchPreference.Material">
+        <item name="android:layout">@layout/m3_preference</item>
+    </style>
+
+    <style name="Preference.SwitchPreferenceCompat.Material3" parent="Preference.SwitchPreferenceCompat.Material">
+        <item name="android:layout">@layout/m3_preference</item>
+        <item name="android:widgetLayout">@layout/m3_preference_widget_material_switch</item>
+    </style>
+
+    <style name="TextAppearance.Preference.Title" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textSize">18sp</item>
+    </style>
+    
+    <style name="TextAppearance.Preference.ColorSecondary" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+</resources>
