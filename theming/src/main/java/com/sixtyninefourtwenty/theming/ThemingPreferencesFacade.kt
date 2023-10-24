@@ -2,18 +2,30 @@ package com.sixtyninefourtwenty.theming
 
 import android.app.Activity
 import android.content.Context
+import android.content.SharedPreferences
 import com.sixtyninefourtwenty.theming.preferences.ThemingPreferences
 
 @Suppress("unused", "MemberVisibilityCanBePrivate")
-class ThemingPreferencesFacade(context: Context) {
+class ThemingPreferencesFacade @JvmOverloads constructor(
+    context: Context,
+    preferences: SharedPreferences? = null
+) {
 
-    private val preferences = ThemingPreferences(context)
+    private val themingPreferences: ThemingPreferences
 
-    var md3: Boolean by preferences::md3
+    init {
+        themingPreferences = if (preferences != null) {
+            ThemingPreferences(context, preferences)
+        } else {
+            ThemingPreferences(context)
+        }
+    }
 
-    var themeColor: ThemeColor by preferences::themeColor
+    var md3: Boolean by themingPreferences::md3
 
-    var lightDarkMode: LightDarkMode by preferences::lightDarkMode
+    var themeColor: ThemeColor by themingPreferences::themeColor
+
+    var lightDarkMode: LightDarkMode by themingPreferences::lightDarkMode
 
     private fun doStuffAndRecreate(activity: Activity, block: (Activity) -> Unit) {
         block(activity)

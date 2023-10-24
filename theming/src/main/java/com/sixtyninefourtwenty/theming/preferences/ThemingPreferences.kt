@@ -1,15 +1,17 @@
 package com.sixtyninefourtwenty.theming.preferences
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Build
 import androidx.core.content.edit
 import androidx.preference.PreferenceDataStore
 import com.sixtyninefourtwenty.theming.LightDarkMode
 import com.sixtyninefourtwenty.theming.ThemeColor
 
-internal class ThemingPreferences(private val context: Context) : PreferenceDataStore() {
-
-    private val preferences = context.getSharedPreferences("theme_preferences", Context.MODE_PRIVATE)
+internal class ThemingPreferences(
+    private val context: Context,
+    private val preferences: SharedPreferences = context.getSharedPreferences("theme_preferences", Context.MODE_PRIVATE)
+) : PreferenceDataStore() {
 
     var md3: Boolean
         get() = getBoolean(MD3_KEY, Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
