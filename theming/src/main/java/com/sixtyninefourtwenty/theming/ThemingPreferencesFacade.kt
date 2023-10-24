@@ -11,7 +11,8 @@ class ThemingPreferencesFacade @JvmOverloads constructor(
     preferences: SharedPreferences? = null
 ) {
 
-    private val themingPreferences: ThemingPreferences
+    @JvmSynthetic
+    internal val themingPreferences: ThemingPreferences
 
     init {
         themingPreferences = if (preferences != null) {

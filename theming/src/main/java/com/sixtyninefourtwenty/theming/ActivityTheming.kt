@@ -1,4 +1,5 @@
 @file:JvmName("ActivityTheming")
+@file:Suppress("unused")
 
 package com.sixtyninefourtwenty.theming
 
@@ -7,12 +8,14 @@ import android.os.Build
 import androidx.annotation.StyleRes
 import com.sixtyninefourtwenty.theming.preferences.ThemingPreferences
 
+@JvmOverloads
 fun Activity.applyTheming(
     @StyleRes material2ThemeStyleRes: Int,
     @StyleRes material3CustomColorsThemeStyleRes: Int,
-    @StyleRes material3DynamicColorsThemeStyleRes: Int
+    @StyleRes material3DynamicColorsThemeStyleRes: Int,
+    preferencesFacade: ThemingPreferencesFacade? = null
 ) {
-    val preferences = ThemingPreferences(this)
+    val preferences = preferencesFacade?.themingPreferences ?: ThemingPreferences(this)
     val themeStyleRes: Int = if (!preferences.md3) {
         material2ThemeStyleRes
     } else if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.R) {
