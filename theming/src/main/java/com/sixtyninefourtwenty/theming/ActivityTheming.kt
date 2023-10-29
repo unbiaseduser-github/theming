@@ -4,10 +4,22 @@
 package com.sixtyninefourtwenty.theming
 
 import android.app.Activity
+import android.content.SharedPreferences
 import android.os.Build
 import androidx.annotation.StyleRes
+import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceGroup
+import com.sixtyninefourtwenty.theming.preferences.ThemingPreferenceFragment
 import com.sixtyninefourtwenty.theming.preferences.ThemingPreferences
+import com.sixtyninefourtwenty.theming.preferences.addThemingPreferences
 
+/**
+ * @param preferencesFacade Preference storage to use if available. This must be one linked to
+ * whatever [SharedPreferences] used by the [PreferenceFragmentCompat] that's calling
+ * [PreferenceGroup.addThemingPreferences].
+ *
+ * If null, the default storage used by [ThemingPreferenceFragment] will be used.
+ */
 @JvmOverloads
 fun Activity.applyTheming(
     @StyleRes material2ThemeStyleRes: Int,

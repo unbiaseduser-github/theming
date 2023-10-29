@@ -3,8 +3,14 @@ package com.sixtyninefourtwenty.theming
 import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import com.sixtyninefourtwenty.theming.preferences.ThemingPreferenceFragment
 import com.sixtyninefourtwenty.theming.preferences.ThemingPreferences
 
+/**
+ * Public-facing theming preferences storage.
+ * @param preferences The underlying storage.
+ * If null, the default storage used by [ThemingPreferenceFragment] will be used.
+ */
 @Suppress("unused", "MemberVisibilityCanBePrivate")
 class ThemingPreferencesFacade @JvmOverloads constructor(
     context: Context,

@@ -11,13 +11,20 @@ import androidx.preference.SwitchPreferenceCompat
 import com.sixtyninefourtwenty.custompreferences.PredefinedColorPickerPreference
 import com.sixtyninefourtwenty.theming.LightDarkMode
 import com.sixtyninefourtwenty.theming.R
+import com.sixtyninefourtwenty.theming.ThemingPreferencesFacade
 
+/**
+ * Calls [addM3Preference], [addLightDarkModePreference] and [addThemeColorPreference] in that exact order.
+ */
 fun PreferenceGroup.addThemingPreferences(activity: Activity, lightDarkMode: LightDarkMode, md3: Boolean) {
     addM3Preference(activity)
     addLightDarkModePreference(activity, lightDarkMode)
     addThemeColorPreference(activity, md3)
 }
 
+/**
+ * Adds a [SwitchPreferenceCompat] that's linked to [ThemingPreferencesFacade.md3].
+ */
 fun PreferenceGroup.addM3Preference(activity: Activity) {
     addPreference(SwitchPreferenceCompat(activity).apply {
         key = ThemingPreferences.MD3_KEY
@@ -31,6 +38,10 @@ fun PreferenceGroup.addM3Preference(activity: Activity) {
     })
 }
 
+/**
+ * Adds a [ListPreference] that's linked to [ThemingPreferencesFacade.lightDarkMode].
+ * @param lightDarkMode obtained from [ThemingPreferencesFacade], will be used to set the preference's icon.
+ */
 fun PreferenceGroup.addLightDarkModePreference(activity: Activity, lightDarkMode: LightDarkMode) {
     addPreference(ListPreference(activity).apply {
         key = ThemingPreferences.LIGHT_DARK_MODE_KEY
@@ -61,6 +72,10 @@ fun PreferenceGroup.addLightDarkModePreference(activity: Activity, lightDarkMode
     })
 }
 
+/**
+ * Adds a [PredefinedColorPickerPreference] that's linked to [ThemingPreferencesFacade.themeColor].
+ * @param md3 obtained from [ThemingPreferencesFacade], will be used to disable the preference if Material 3 dynamic colors is active.
+ */
 fun PreferenceGroup.addThemeColorPreference(activity: Activity, md3: Boolean) {
     addPreference(PredefinedColorPickerPreference(activity).apply {
         key = ThemingPreferences.PRIMARY_COLOR_KEY
