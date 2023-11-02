@@ -9,27 +9,18 @@ import com.sixtyninefourtwenty.theming.LightDarkMode
 import com.sixtyninefourtwenty.theming.ThemeColor
 
 internal class ThemingPreferences(
-    private val context: Context,
-    private val preferences: SharedPreferences = context.getSharedPreferences("theme_preferences", Context.MODE_PRIVATE)
+    context: Context
 ) : PreferenceDataStore(), ThemingPreferencesSupplier {
 
-    override var md3: Boolean
-        get() = getBoolean(MD3_KEY, Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
-        set(value) = putBoolean(MD3_KEY, value)
+    private val preferences: SharedPreferences = context.getSharedPreferences("theme_preferences", Context.MODE_PRIVATE)
 
-    override var themeColor: ThemeColor
-        get() = ThemeColor.entries.first { it.getColorInt(context) == getInt(PRIMARY_COLOR_KEY, ThemeColor.BLUE.getColorInt(context)) }
-        set(value) = putInt(PRIMARY_COLOR_KEY, value.getColorInt(context))
+    private val themingPreferencesSupplier = preferences.toThemingPreferencesSupplier(context)
 
-    override var lightDarkMode: LightDarkMode
-        get() = LightDarkMode.entries.first { it.getPrefValue(context) == getString(LIGHT_DARK_MODE_KEY,
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                LightDarkMode.SYSTEM.getPrefValue(context)
-            } else {
-                LightDarkMode.LIGHT.getPrefValue(context)
-            })
-        }
-        set(value) = putString(LIGHT_DARK_MODE_KEY, value.getPrefValue(context))
+    override var md3: Boolean by themingPreferencesSupplier::md3
+
+    override var themeColor: ThemeColor by themingPreferencesSupplier::themeColor
+
+    override var lightDarkMode: LightDarkMode by themingPreferencesSupplier::lightDarkMode
 
     override fun putString(key: String?, value: String?) {
         preferences.edit { putString(key, value) }
