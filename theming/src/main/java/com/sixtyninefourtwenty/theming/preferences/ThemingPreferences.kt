@@ -11,17 +11,17 @@ import com.sixtyninefourtwenty.theming.ThemeColor
 internal class ThemingPreferences(
     private val context: Context,
     private val preferences: SharedPreferences = context.getSharedPreferences("theme_preferences", Context.MODE_PRIVATE)
-) : PreferenceDataStore() {
+) : PreferenceDataStore(), ThemingPreferencesSupplier {
 
-    var md3: Boolean
+    override var md3: Boolean
         get() = getBoolean(MD3_KEY, Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
         set(value) = putBoolean(MD3_KEY, value)
 
-    var themeColor: ThemeColor
+    override var themeColor: ThemeColor
         get() = ThemeColor.entries.first { it.getColorInt(context) == getInt(PRIMARY_COLOR_KEY, ThemeColor.BLUE.getColorInt(context)) }
         set(value) = putInt(PRIMARY_COLOR_KEY, value.getColorInt(context))
 
-    var lightDarkMode: LightDarkMode
+    override var lightDarkMode: LightDarkMode
         get() = LightDarkMode.entries.first { it.getPrefValue(context) == getString(LIGHT_DARK_MODE_KEY,
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 LightDarkMode.SYSTEM.getPrefValue(context)
