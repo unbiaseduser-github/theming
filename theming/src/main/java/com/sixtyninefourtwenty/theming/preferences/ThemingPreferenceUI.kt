@@ -115,7 +115,7 @@ fun PreferenceGroup.addUseMD3CustomColorsThemeOnAndroid12Preference(
 ) {
     addPreference(SwitchPreferenceCompat(activity).apply {
         key = prefKey
-        title = activity.getString(R.string.dynamic_colors)
+        title = activity.getString(R.string.custom_colors_m3)
         setDefaultValue(false)
         setOnPreferenceChangeListener { _, _ ->
             activity.recreate()
