@@ -6,7 +6,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.StyleRes
 import androidx.core.content.ContextCompat
 
-enum class ThemeColor(@StyleRes private val themeColorStyleRes: Int, @ColorRes val colorRes: Int) {
+enum class ThemeColor(@StyleRes private val themeColorStyleRes: Int, @ColorRes private val colorRes: Int) {
     BLUE(R.style.ThemeColors_Blue, R.color.blue_fixed),
     RED(R.style.ThemeColors_Red, R.color.red_fixed),
     GREEN(R.style.ThemeColors_Green, R.color.green_fixed),
@@ -14,7 +14,8 @@ enum class ThemeColor(@StyleRes private val themeColorStyleRes: Int, @ColorRes v
     ORANGE(R.style.ThemeColors_Orange, R.color.orange_fixed),
     PINK(R.style.ThemeColors_Pink, R.color.pink_fixed);
 
-    fun getColorInt(context: Context) = ContextCompat.getColor(context, colorRes)
+    @JvmSynthetic
+    internal fun getColorInt(context: Context) = ContextCompat.getColor(context, colorRes)
 
     fun applyTo(theme: Resources.Theme) {
         theme.applyStyle(themeColorStyleRes, true)

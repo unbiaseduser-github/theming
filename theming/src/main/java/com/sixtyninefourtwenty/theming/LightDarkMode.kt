@@ -10,12 +10,13 @@ enum class LightDarkMode(private val androidInt: Int) {
     BATTERY(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY),
     SYSTEM(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
 
+    @JvmSynthetic
     internal fun getPrefValue(context: Context): String {
         val arrayRes = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) R.array.themes_preference_entry_values else R.array.themes_preference_entry_values_p
         return context.resources.getStringArray(arrayRes)[ordinal]
     }
 
-    internal fun apply() {
+    fun apply() {
         AppCompatDelegate.setDefaultNightMode(androidInt)
     }
 }
