@@ -37,7 +37,7 @@ fun Activity.applyTheming(
     val preferences = preferencesSupplier ?: ThemingPreferences(this)
     val themeStyleRes: Int = if (!preferences.md3) {
         material2ThemeStyleRes
-    } else if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.R) {
+    } else if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.R || preferences.useM3CustomColorThemeOnAndroid12) {
         material3CustomColorsThemeStyleRes
     } else {
         material3DynamicColorsThemeStyleRes

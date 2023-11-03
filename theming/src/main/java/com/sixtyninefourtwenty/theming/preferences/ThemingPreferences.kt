@@ -22,6 +22,8 @@ internal class ThemingPreferences(
 
     override var lightDarkMode: LightDarkMode by themingPreferencesSupplier::lightDarkMode
 
+    override var useM3CustomColorThemeOnAndroid12: Boolean by themingPreferencesSupplier::useM3CustomColorThemeOnAndroid12
+
     override fun putString(key: String?, value: String?) {
         preferences.edit { putString(key, value) }
     }
@@ -74,6 +76,7 @@ internal class ThemingPreferences(
         const val MD3_KEY = "md3"
         const val LIGHT_DARK_MODE_KEY = "light_dark_mode"
         const val PRIMARY_COLOR_KEY = "primary_color"
+        const val USE_MD3_CUSTOM_COLORS_ON_ANDROID_12 = "md3_cc_a12"
     }
 
 }

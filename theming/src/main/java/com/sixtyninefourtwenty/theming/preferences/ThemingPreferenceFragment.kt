@@ -15,7 +15,7 @@ class ThemingPreferenceFragment : PreferenceFragmentCompatAccommodateCustomDialo
         val prefs = ThemingPreferences(requireContext())
         preferenceManager.preferenceDataStore = prefs
         preferenceScreen = preferenceManager.createPreferenceScreen(requireContext()).apply {
-            addThemingPreferences(requireActivity(), prefs.lightDarkMode, prefs.md3)
+            addThemingPreferences(requireActivity(), prefs.lightDarkMode, prefs.md3, prefs.useM3CustomColorThemeOnAndroid12)
         }
     }
 

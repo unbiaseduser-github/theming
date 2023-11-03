@@ -18,6 +18,7 @@ interface ThemingPreferencesSupplier {
     var md3: Boolean
     var themeColor: ThemeColor
     var lightDarkMode: LightDarkMode
+    var useM3CustomColorThemeOnAndroid12: Boolean
 
     companion object {
 
@@ -60,6 +61,12 @@ interface ThemingPreferencesSupplier {
                     preferences.edit { putString(ThemingPreferences.LIGHT_DARK_MODE_KEY, value.getPrefValue(context)) }
                 }
 
+            override var useM3CustomColorThemeOnAndroid12: Boolean
+                get() = preferences.getBoolean(ThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12, false)
+                set(value) {
+                    preferences.edit { putBoolean(ThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12, value) }
+                }
+
         }
 
         /**
@@ -90,6 +97,13 @@ interface ThemingPreferencesSupplier {
                     })
                 }
                 set(value) = store.putString(ThemingPreferences.LIGHT_DARK_MODE_KEY, value.getPrefValue(context))
+
+            override var useM3CustomColorThemeOnAndroid12: Boolean
+                get() = store.getBoolean(ThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12, false)
+                set(value) {
+                    store.putBoolean(ThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12, value)
+                }
+
         }
     }
 }

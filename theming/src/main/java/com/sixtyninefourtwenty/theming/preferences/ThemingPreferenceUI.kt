@@ -14,20 +14,24 @@ import com.sixtyninefourtwenty.theming.R
 import com.sixtyninefourtwenty.theming.applyTheming
 
 /**
- * Calls [addM3Preference], [addLightDarkModePreference] and [addThemeColorPreference] in that exact order.
+ * Calls [addM3Preference], [addLightDarkModePreference], [addUseMD3CustomColorsThemeOnAndroid12Preference]
+ * and [addThemeColorPreference] in that exact order.
  */
 @JvmOverloads
 fun PreferenceGroup.addThemingPreferences(
     activity: Activity,
     lightDarkMode: LightDarkMode,
     md3: Boolean,
+    themeColorPreferenceAlwaysEnabledOnAndroid12: Boolean,
     m3PrefKey: String = ThemingPreferences.MD3_KEY,
     lightDarkModePrefKey: String = ThemingPreferences.LIGHT_DARK_MODE_KEY,
-    themeColorPrefKey: String = ThemingPreferences.PRIMARY_COLOR_KEY,
+    useMD3CustomColorsThemeOnAndroid12PrefKey: String = ThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12,
+    themeColorPrefKey: String = ThemingPreferences.PRIMARY_COLOR_KEY
 ) {
     addM3Preference(activity, m3PrefKey)
     addLightDarkModePreference(activity, lightDarkMode, lightDarkModePrefKey)
-    addThemeColorPreference(activity, md3, themeColorPrefKey)
+    addUseMD3CustomColorsThemeOnAndroid12Preference(activity, md3, useMD3CustomColorsThemeOnAndroid12PrefKey)
+    addThemeColorPreference(activity, md3, themeColorPreferenceAlwaysEnabledOnAndroid12, themeColorPrefKey)
 }
 
 /**
@@ -96,17 +100,51 @@ fun PreferenceGroup.addLightDarkModePreference(
 }
 
 /**
+ * Adds a [SwitchPreferenceCompat].
+ * @param prefKey Key to use for the preference. Default is an internal key the library
+ * implementations of [ThemingPreferencesSupplier] use - if you call [Activity.applyTheming]
+ * with one such implementation, you don't need this parameter.
+ * @param md3 obtained from [ThemingPreferencesSupplier], will be used to disable the preference if
+ * it's `false` (Material 3 theme isn't active).
+ */
+@JvmOverloads
+fun PreferenceGroup.addUseMD3CustomColorsThemeOnAndroid12Preference(
+    activity: Activity,
+    md3: Boolean,
+    prefKey: String = ThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12
+) {
+    addPreference(SwitchPreferenceCompat(activity).apply {
+        key = prefKey
+        title = activity.getString(R.string.dynamic_colors)
+        setDefaultValue(false)
+        setOnPreferenceChangeListener { _, _ ->
+            activity.recreate()
+            true
+        }
+
+        if (!md3) {
+            isEnabled = false
+            summary = activity.getString(R.string.md3_not_applied)
+        }
+    })
+}
+
+/**
  * Adds a [PredefinedColorPickerPreference].
  * @param prefKey Key to use for the preference. Default is an internal key the library
  * implementations of [ThemingPreferencesSupplier] use - if you call [Activity.applyTheming]
  * with one such implementation, you don't need this parameter.
  * @param md3 obtained from [ThemingPreferencesSupplier], will be used to disable the preference if
  * Material 3 dynamic colors is active.
+ * @param alwaysEnabledOnAndroid12 obtained from [ThemingPreferencesSupplier.useM3CustomColorThemeOnAndroid12],
+ * determines whether this preference will always be enabled on Android 12 or later. Nullifies [md3]
+ * if set to `true`.
  */
 @JvmOverloads
 fun PreferenceGroup.addThemeColorPreference(
     activity: Activity,
     md3: Boolean,
+    alwaysEnabledOnAndroid12: Boolean,
     prefKey: String = ThemingPreferences.PRIMARY_COLOR_KEY
 ) {
     addPreference(PredefinedColorPickerPreference(activity).apply {
@@ -120,9 +158,13 @@ fun PreferenceGroup.addThemeColorPreference(
             true
         }
 
-        if (md3 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            isEnabled = false
-            summary = activity.getString(R.string.using_android_12_dynamic_colors)
+        if (!alwaysEnabledOnAndroid12) {
+            if (md3 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                isEnabled = false
+                summary = activity.getString(R.string.using_android_12_dynamic_colors)
+            } else {
+                summaryProvider = PredefinedColorPickerPreference.getSimpleSummaryProvider()
+            }
         } else {
             summaryProvider = PredefinedColorPickerPreference.getSimpleSummaryProvider()
         }
