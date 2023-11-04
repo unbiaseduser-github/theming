@@ -122,7 +122,9 @@ fun PreferenceGroup.addUseMD3CustomColorsThemeOnAndroid12Preference(
             true
         }
 
-        if (!md3) {
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.R) {
+            isVisible = false
+        } else if (!md3) {
             isEnabled = false
             summary = activity.getString(R.string.md3_not_applied)
         }
