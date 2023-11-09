@@ -5,12 +5,14 @@ package com.sixtyninefourtwenty.theming.preferences
 
 import android.app.Activity
 import android.os.Build
+import androidx.annotation.ColorInt
 import androidx.preference.ListPreference
 import androidx.preference.PreferenceGroup
 import androidx.preference.SwitchPreferenceCompat
 import com.sixtyninefourtwenty.custompreferences.PredefinedColorPickerPreference
 import com.sixtyninefourtwenty.theming.LightDarkMode
 import com.sixtyninefourtwenty.theming.R
+import com.sixtyninefourtwenty.theming.ThemeColor
 import com.sixtyninefourtwenty.theming.applyTheming
 
 /**
@@ -25,13 +27,16 @@ fun PreferenceGroup.addThemingPreferences(
     themeColorPreferenceAlwaysEnabledOnAndroid12: Boolean,
     m3PrefKey: String = ThemingPreferences.MD3_KEY,
     lightDarkModePrefKey: String = ThemingPreferences.LIGHT_DARK_MODE_KEY,
+    lightDarkModePrefEntries: Array<CharSequence>? = null,
+    lightDarkModePrefEntryValues: Array<CharSequence>? = null,
     useMD3CustomColorsThemeOnAndroid12PrefKey: String = ThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12,
-    themeColorPrefKey: String = ThemingPreferences.PRIMARY_COLOR_KEY
+    themeColorPrefKey: String = ThemingPreferences.PRIMARY_COLOR_KEY,
+    @ColorInt themeColorPrefColors: IntArray? = null
 ) {
     addM3Preference(activity, m3PrefKey)
-    addLightDarkModePreference(activity, lightDarkMode, lightDarkModePrefKey)
+    addLightDarkModePreference(activity, lightDarkMode, lightDarkModePrefKey, lightDarkModePrefEntries, lightDarkModePrefEntryValues)
     addUseMD3CustomColorsThemeOnAndroid12Preference(activity, md3, useMD3CustomColorsThemeOnAndroid12PrefKey)
-    addThemeColorPreference(activity, md3, themeColorPreferenceAlwaysEnabledOnAndroid12, themeColorPrefKey)
+    addThemeColorPreference(activity, md3, themeColorPreferenceAlwaysEnabledOnAndroid12, themeColorPrefKey, themeColorPrefColors)
 }
 
 /**
@@ -63,23 +68,31 @@ fun PreferenceGroup.addM3Preference(
  * implementations of [ThemingPreferencesSupplier] use - if you call [Activity.applyTheming]
  * with one such implementation, you don't need this parameter.
  * @param lightDarkMode obtained from [ThemingPreferencesSupplier], will be used to set the preference's icon.
+ * @param prefEntries Custom entries used by the preference. This array must have one value
+ * for each [LightDarkMode] value. If null, the library's internal string array will be used.
+ * @param prefEntryValues Custom entry values used by the preference. This array must have one value
+ * for each [LightDarkMode] value, in order. If null, the library's internal string array will be used,
+ * which is used by the library implementations of [ThemingPreferencesSupplier]. if you call [Activity.applyTheming]
+ * with one such implementation, you don't need this parameter.
  */
 @JvmOverloads
 fun PreferenceGroup.addLightDarkModePreference(
     activity: Activity,
     lightDarkMode: LightDarkMode,
-    prefKey: String = ThemingPreferences.LIGHT_DARK_MODE_KEY
+    prefKey: String = ThemingPreferences.LIGHT_DARK_MODE_KEY,
+    prefEntries: Array<CharSequence>? = null,
+    prefEntryValues: Array<CharSequence>? = null
 ) {
     addPreference(ListPreference(activity).apply {
         key = prefKey
         title = activity.getString(R.string.theme)
         dialogTitle = activity.getString(R.string.theme)
-        entries = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        entries = prefEntries ?: if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             activity.resources.getStringArray(R.array.themes_preference_entries)
         } else {
             activity.resources.getStringArray(R.array.themes_preference_entries_p)
         }
-        entryValues = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+        entryValues = prefEntryValues ?: if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             activity.resources.getStringArray(R.array.themes_preference_entry_values)
         } else {
             activity.resources.getStringArray(R.array.themes_preference_entry_values_p)
@@ -141,20 +154,29 @@ fun PreferenceGroup.addUseMD3CustomColorsThemeOnAndroid12Preference(
  * @param alwaysEnabledOnAndroid12 obtained from [ThemingPreferencesSupplier.useM3CustomColorThemeOnAndroid12],
  * determines whether this preference will always be enabled on Android 12 or later. Nullifies [md3]
  * if set to `true`.
+ * @param prefColors Custom color values used by the preference. This array must have one color
+ * int for each [ThemeColor] value. If null, the library's internal color array will be used, which
+ * is used by the library implementations of [ThemingPreferencesSupplier]. if you call [Activity.applyTheming]
+ * with one such implementation, you don't need this parameter.
  */
 @JvmOverloads
 fun PreferenceGroup.addThemeColorPreference(
     activity: Activity,
     md3: Boolean,
     alwaysEnabledOnAndroid12: Boolean,
-    prefKey: String = ThemingPreferences.PRIMARY_COLOR_KEY
+    prefKey: String = ThemingPreferences.PRIMARY_COLOR_KEY,
+    @ColorInt prefColors: IntArray? = null
 ) {
     addPreference(PredefinedColorPickerPreference(activity).apply {
         key = prefKey
         title = activity.getString(R.string.primary_color)
         setIcon(R.drawable.palette)
         setDefaultValue("#3385ff")
-        setAvailableColorsArrayRes(R.array.theme_color_preference_available_colors)
+        if (prefColors != null) {
+            setAvailableColors(prefColors)
+        } else {
+            setAvailableColorsArrayRes(R.array.theme_color_preference_available_colors)
+        }
         setOnPreferenceChangeListener { _, _ ->
             activity.recreate()
             true
