@@ -45,7 +45,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.sixtyninefourtwenty"
                 artifactId = "theming"
-                version = "1.1.4"
+                version = "1.1.5"
 
                 from(components["release"])
 
