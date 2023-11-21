@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <integer-array name="theme_color_preference_available_colors">
         <item>@color/blue_fixed</item>
         <item>@color/red_fixed</item>
@@ -35,5 +34,4 @@
         <item>dark</item>
         <item>battery_saver</item>
     </string-array>
-
 </resources>

@@ -2,13 +2,12 @@ package com.sixtyninefourtwenty.theming.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.os.Build
 import androidx.core.content.edit
 import androidx.preference.PreferenceDataStore
 import com.sixtyninefourtwenty.theming.LightDarkMode
 import com.sixtyninefourtwenty.theming.ThemeColor
 
-internal class ThemingPreferences(
+internal class DefaultThemingPreferences(
     context: Context
 ) : PreferenceDataStore(), ThemingPreferencesSupplier {
 

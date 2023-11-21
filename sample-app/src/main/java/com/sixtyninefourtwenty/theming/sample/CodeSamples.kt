@@ -1,14 +1,12 @@
 package com.sixtyninefourtwenty.theming.sample
 
-import com.sixtyninefourtwenty.theming.ThemeColor
-
 val INBUILT_FRAGMENT_KOTLIN_SAMPLE = """
     //YourActivity.kt
     class YourActivity : AppCompatActivity() {
         
         override fun onCreate(savedInstanceState: Bundle?) {
-            //Use the default value for preferencesSupplier parameter
-            applyTheming(
+            //Use the default value for preferencesSupplier parameter. Make sure you have `preference-integration` extension installed.
+            applyThemingWithPreferences(
                 ...
             )
         }
@@ -21,8 +19,8 @@ val INBUILT_FRAGMENT_JAVA_SAMPLE = """
     public class YourActivity extends AppCompatActivity {
        
        protected void onCreate(Bundle savedInstanceState) {
-           //Use the default value for preferencesSupplier parameter
-           ActivityTheming.applyTheming(
+           //Use the default value for preferencesSupplier parameter. Make sure you have `preference-integration` extension installed.
+           ActivityThemingWithPreferences.applyThemingWithPreferences(
                this,
                ...
            )
@@ -33,6 +31,7 @@ val INBUILT_FRAGMENT_JAVA_SAMPLE = """
 
 val INBUILT_PREFS_KOTLIN_SAMPLE = """
     //If you want to use the library's default ThemingPreferencesSupplier implementations
+    //NOTE: Make sure you have `preference-integration` extension installed.
     
     //YourPreferenceDataStore.kt
     class YourPreferenceDataStore : PreferenceDataStore() {
@@ -152,6 +151,7 @@ val INBUILT_PREFS_KOTLIN_SAMPLE = """
 
 val INBUILT_PREFS_JAVA_SAMPLE = """
     //If you want to use the library's default ThemingPreferencesSupplier implementations
+    //NOTE: Make sure you have `preference-integration` extension installed.
     
     //YourPreferenceDataStore.java
     public class YourPreferenceDataStore extends PreferenceDataStore {
@@ -163,7 +163,7 @@ val INBUILT_PREFS_JAVA_SAMPLE = """
     
         protected void onCreate(Bundle savedInstanceState) {
             YourPreferenceDataStore dataStore = ...;
-            var prefs = ThemingPreferencesSupplier.from(this, dataStore)
+            var prefs = ThemingPreferencesSuppliers.create(dataStore, this);
             ActivityTheming.applyTheming(
                 this,
                 ...,
@@ -179,7 +179,7 @@ val INBUILT_PREFS_JAVA_SAMPLE = """
          public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
              YourPreferenceDataStore dataStore = ...;
              getPreferenceManager().setPreferenceDataStore(dataStore);
-             var prefs = ThemingPreferencesSupplier.from(requireContext(), dataStore);
+             var prefs = ThemingPreferencesSuppliers.create(dataStore, requireContext());
              PreferenceCategory category = Objects.requireNonNull(findPreference("your_key"));
              ThemingPreferenceUI.addThemingPreferences(
                  category,

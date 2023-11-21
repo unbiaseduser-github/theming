@@ -1,21 +1,15 @@
 package com.sixtyninefourtwenty.theming
 
-import android.content.Context
 import android.content.res.Resources
-import androidx.annotation.ColorRes
 import androidx.annotation.StyleRes
-import androidx.core.content.ContextCompat
 
-enum class ThemeColor(@StyleRes private val themeColorStyleRes: Int, @ColorRes private val colorRes: Int) {
-    BLUE(R.style.ThemeColors_Blue, R.color.blue_fixed),
-    RED(R.style.ThemeColors_Red, R.color.red_fixed),
-    GREEN(R.style.ThemeColors_Green, R.color.green_fixed),
-    PURPLE(R.style.ThemeColors_Purple, R.color.purple_fixed),
-    ORANGE(R.style.ThemeColors_Orange, R.color.orange_fixed),
-    PINK(R.style.ThemeColors_Pink, R.color.pink_fixed);
-
-    @JvmSynthetic
-    internal fun getColorInt(context: Context) = ContextCompat.getColor(context, colorRes)
+enum class ThemeColor(@StyleRes private val themeColorStyleRes: Int) {
+    BLUE(R.style.ThemeColors_Blue),
+    RED(R.style.ThemeColors_Red),
+    GREEN(R.style.ThemeColors_Green),
+    PURPLE(R.style.ThemeColors_Purple),
+    ORANGE(R.style.ThemeColors_Orange),
+    PINK(R.style.ThemeColors_Pink);
 
     fun applyTo(theme: Resources.Theme) {
         theme.applyStyle(themeColorStyleRes, true)

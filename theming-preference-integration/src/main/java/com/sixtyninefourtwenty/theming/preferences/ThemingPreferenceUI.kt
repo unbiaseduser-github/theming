@@ -11,7 +11,6 @@ import androidx.preference.PreferenceGroup
 import androidx.preference.SwitchPreferenceCompat
 import com.sixtyninefourtwenty.custompreferences.PredefinedColorPickerPreference
 import com.sixtyninefourtwenty.theming.LightDarkMode
-import com.sixtyninefourtwenty.theming.R
 import com.sixtyninefourtwenty.theming.ThemeColor
 import com.sixtyninefourtwenty.theming.applyTheming
 
@@ -25,12 +24,12 @@ fun PreferenceGroup.addThemingPreferences(
     lightDarkMode: LightDarkMode,
     md3: Boolean,
     themeColorPreferenceAlwaysEnabledOnAndroid12: Boolean,
-    m3PrefKey: String = ThemingPreferences.MD3_KEY,
-    lightDarkModePrefKey: String = ThemingPreferences.LIGHT_DARK_MODE_KEY,
+    m3PrefKey: String = DefaultThemingPreferences.MD3_KEY,
+    lightDarkModePrefKey: String = DefaultThemingPreferences.LIGHT_DARK_MODE_KEY,
     lightDarkModePrefEntries: Array<CharSequence>? = null,
     lightDarkModePrefEntryValues: Array<CharSequence>? = null,
-    useMD3CustomColorsThemeOnAndroid12PrefKey: String = ThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12,
-    themeColorPrefKey: String = ThemingPreferences.PRIMARY_COLOR_KEY,
+    useMD3CustomColorsThemeOnAndroid12PrefKey: String = DefaultThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12,
+    themeColorPrefKey: String = DefaultThemingPreferences.PRIMARY_COLOR_KEY,
     @ColorInt themeColorPrefColors: IntArray? = null
 ) {
     addM3Preference(activity, m3PrefKey)
@@ -48,7 +47,7 @@ fun PreferenceGroup.addThemingPreferences(
 @JvmOverloads
 fun PreferenceGroup.addM3Preference(
     activity: Activity,
-    prefKey: String = ThemingPreferences.MD3_KEY
+    prefKey: String = DefaultThemingPreferences.MD3_KEY
 ) {
     addPreference(SwitchPreferenceCompat(activity).apply {
         key = prefKey
@@ -79,7 +78,7 @@ fun PreferenceGroup.addM3Preference(
 fun PreferenceGroup.addLightDarkModePreference(
     activity: Activity,
     lightDarkMode: LightDarkMode,
-    prefKey: String = ThemingPreferences.LIGHT_DARK_MODE_KEY,
+    prefKey: String = DefaultThemingPreferences.LIGHT_DARK_MODE_KEY,
     prefEntries: Array<CharSequence>? = null,
     prefEntryValues: Array<CharSequence>? = null
 ) {
@@ -124,7 +123,7 @@ fun PreferenceGroup.addLightDarkModePreference(
 fun PreferenceGroup.addUseMD3CustomColorsThemeOnAndroid12Preference(
     activity: Activity,
     md3: Boolean,
-    prefKey: String = ThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12
+    prefKey: String = DefaultThemingPreferences.USE_MD3_CUSTOM_COLORS_ON_ANDROID_12
 ) {
     addPreference(SwitchPreferenceCompat(activity).apply {
         key = prefKey
@@ -164,7 +163,7 @@ fun PreferenceGroup.addThemeColorPreference(
     activity: Activity,
     md3: Boolean,
     alwaysEnabledOnAndroid12: Boolean,
-    prefKey: String = ThemingPreferences.PRIMARY_COLOR_KEY,
+    prefKey: String = DefaultThemingPreferences.PRIMARY_COLOR_KEY,
     @ColorInt prefColors: IntArray? = null
 ) {
     addPreference(PredefinedColorPickerPreference(activity).apply {

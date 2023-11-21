@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sixtyninefourtwenty.theming"
+    namespace = "com.sixtyninefourtwenty.theming.preferences"
     compileSdk = 34
 
     publishing {
@@ -44,14 +44,14 @@ afterEvaluate {
         publications {
             register<MavenPublication>("release") {
                 groupId = "com.sixtyninefourtwenty"
-                artifactId = "theming"
+                artifactId = "theming-preference-integration"
                 version = "1.1.5"
 
                 from(components["release"])
 
                 pom {
-                    name.set("theming")
-                    description.set("Theming")
+                    name.set("theming-preference-integration")
+                    description.set("Integration of theming library with preferences UI")
 
                     licenses {
                         license {
@@ -76,9 +76,12 @@ afterEvaluate {
 
 dependencies {
 
+    api(project(":theming"))
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
+    api("androidx.preference:preference-ktx:1.2.1")
+    implementation("com.github.unbiaseduser:custom-preferences:1.1.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

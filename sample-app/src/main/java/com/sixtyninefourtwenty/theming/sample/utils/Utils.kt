@@ -10,10 +10,8 @@ import android.view.View
 import androidx.core.view.isVisible
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.sixtyninefourtwenty.theming.applyTheming
+import com.sixtyninefourtwenty.theming.preferences.applyThemingWithPreferences
 import com.sixtyninefourtwenty.theming.preferences.ThemingPreferencesSupplier
-import com.sixtyninefourtwenty.theming.sample.CUSTOM_PREFERENCE_SUPPLIER_JAVA_SAMPLE
-import com.sixtyninefourtwenty.theming.sample.CUSTOM_PREFERENCE_SUPPLIER_KOTLIN_SAMPLE
 import com.sixtyninefourtwenty.theming.sample.MyApplication
 import com.sixtyninefourtwenty.theming.sample.R
 import com.sixtyninefourtwenty.theming.sample.databinding.BottomSheetDialogBaseBinding
@@ -21,7 +19,7 @@ import com.sixtyninefourtwenty.theming.sample.databinding.InfoWithCodeSamplesBin
 
 fun Activity.theme(
     preferencesSupplier: ThemingPreferencesSupplier? = null
-) = applyTheming(
+) = applyThemingWithPreferences(
     material2ThemeStyleRes = R.style.Theme_ThemingSample_Material2,
     material3CustomColorsThemeStyleRes = R.style.Theme_ThemingSample_Material3_CustomColors,
     material3DynamicColorsThemeStyleRes = R.style.Theme_ThemingSample_Material3_DynamicColors,

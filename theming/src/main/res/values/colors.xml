@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <color name="blue_fixed">#3385ff</color>
-    <color name="red_fixed">#d8260e</color>
-    <color name="green_fixed">#00c71e</color>
-    <color name="purple_fixed">#7700f6</color>
-    <color name="orange_fixed">#ff8800</color>
-    <color name="pink_fixed">#e700ef</color>
-
     <color name="m2ColorPrimary_blue">#3385ff</color>
     <color name="m2ColorPrimaryVariant_blue">#3560d7</color>
     <color name="m2ColorOnPrimary_blue">@android:color/white</color>
@@ -193,5 +185,4 @@
     <color name="m3ColorSurfaceVariant_pink">#eddee7</color>
     <color name="m3ColorOnSurfaceVariant_pink">#4e444b</color>
     <color name="m3ColorOutline_pink">#7f747c</color>
-
 </resources>
