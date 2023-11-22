@@ -16,5 +16,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "theming"
 include(":theming")
-include(":sample-app")
-include(":theming-preference-integration")

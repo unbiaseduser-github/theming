@@ -13,7 +13,6 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/sample-app" />
             <option value="$PROJECT_DIR$/theming" />
-            <option value="$PROJECT_DIR$/theming-preference-integration" />
           </set>
         </option>
       </GradleProjectSettings>
