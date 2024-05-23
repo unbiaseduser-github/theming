@@ -40,11 +40,11 @@ android {
 
 dependencies {
     implementation(project(":theming"))
-    implementation("com.github.unbiaseduser.library-integrations:theming-preference-integration:1.0.1")
+    implementation("com.github.unbiaseduser.library-integrations:theming-preference-integration:1.0.2")
     implementation("io.github.amrdeveloper:codeview:1.3.9")
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.10.0")
+    implementation("com.google.android.material:material:1.12.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.preference:preference-ktx:1.2.1")
     testImplementation("junit:junit:4.13.2")
