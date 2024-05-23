@@ -3,6 +3,7 @@ package com.sixtyninefourtwenty.theming.sample.utils
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
@@ -48,6 +49,23 @@ fun BottomSheetDialogBaseBinding.setContentView(view: View) {
     }
 }
 
+private val javaCodeKeywords = "abstract|boolean|break|byte|case|catch" +
+        "|char|class|continue|default|do|double|else" +
+        "|enum|extends|final|finally|float|for|if" +
+        "|implements|import|instanceof|int|interface" +
+        "|long|native|new|null|package|private|protected" +
+        "|public|return|short|static|strictfp|super|switch" +
+        "|synchronized|this|throw|transient|try|void|volatile|while"
+
+private val kotlinCodeKeywords = "$javaCodeKeywords|as|as?|fun|in|!in|object|typealias|val|var|when|" +
+        "by|constructor|delegate|dynamic|field|file|get|init|set|value|where|actual|annotation|companion|" +
+        "crossinline|data|enum|expect|external|field|infix|inline|inner|internal|it|lateinit|noinline|" +
+        "open|operator|out|override|reified|sealed|suspend|tailrec|vararg"
+
+private val javaCodePattern = ("\\b($javaCodeKeywords)\\b").toPattern()
+
+private val kotlinCodePattern = ("\\b($kotlinCodeKeywords)\\b").toPattern()
+
 fun LayoutInflater.inflateAndSetupInfoWithCodeSamplesLayout(
     infoText: String,
     kotlinCode: String,
@@ -57,11 +75,13 @@ fun LayoutInflater.inflateAndSetupInfoWithCodeSamplesLayout(
     kotlinExpander.setOnClickListener {
         kotlinSampleScroller.isVisible = !kotlinSampleScroller.isVisible
     }
-    kotlinSample.text = kotlinCode
+    kotlinSample.addSyntaxPattern(kotlinCodePattern, Color.BLUE)
+    kotlinSample.setText(kotlinCode)
     javaExpander.setOnClickListener {
         javaSampleScroller.isVisible = !javaSampleScroller.isVisible
     }
-    javaSample.text = javaCode
+    javaSample.addSyntaxPattern(javaCodePattern, Color.BLUE)
+    javaSample.setText(javaCode)
 }
 
 fun Context.showInfoWithCodeSamplesDialog(
