@@ -16,4 +16,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "theming"
 include(":theming")
-include(":sample-app")
+//include(":sample-app")
