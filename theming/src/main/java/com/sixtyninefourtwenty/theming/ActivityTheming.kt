@@ -6,7 +6,7 @@ package com.sixtyninefourtwenty.theming
 import android.app.Activity
 import android.os.Build
 import androidx.annotation.StyleRes
-import com.sixtyninefourtwenty.theming.preferences.ThemingPreferencesSupplier
+import com.sixtyninefourtwenty.theming.preferences.ImmutableThemingPreferencesSupplier
 
 /**
  * Apply theming to an [Activity] according to settings.
@@ -23,7 +23,7 @@ fun Activity.applyTheming(
     @StyleRes material2ThemeStyleRes: Int,
     @StyleRes material3CustomColorsThemeStyleRes: Int,
     @StyleRes material3DynamicColorsThemeStyleRes: Int,
-    preferencesSupplier: ThemingPreferencesSupplier
+    preferencesSupplier: ImmutableThemingPreferencesSupplier
 ) {
     val themeStyleRes: Int = if (!preferencesSupplier.md3) {
         material2ThemeStyleRes
