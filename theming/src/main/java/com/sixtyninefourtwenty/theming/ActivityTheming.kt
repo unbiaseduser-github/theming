@@ -7,6 +7,7 @@ import android.app.Activity
 import android.os.Build
 import androidx.annotation.StyleRes
 import com.sixtyninefourtwenty.theming.preferences.ImmutableThemingPreferencesSupplier
+import com.sixtyninefourtwenty.theming.preferences.ImmutableThemingPreferencesSupplierWithoutM3CustomColor
 
 /**
  * Apply theming to an [Activity] according to settings.
@@ -47,7 +48,7 @@ fun Activity.applyTheming(
 fun Activity.applyThemingWithoutM3CustomColors(
     @StyleRes material2ThemeStyleRes: Int,
     @StyleRes material3DynamicColorsThemeStyleRes: Int,
-    preferencesSupplier: ImmutableThemingPreferencesSupplier
+    preferencesSupplier: ImmutableThemingPreferencesSupplierWithoutM3CustomColor
 ) {
     val themeStyleRes: Int = if (!preferencesSupplier.md3) {
         material2ThemeStyleRes
@@ -59,7 +60,7 @@ fun Activity.applyThemingWithoutM3CustomColors(
 
 private fun Activity.applyThemingCommon(
     @StyleRes themeStyleRes: Int,
-    preferencesSupplier: ImmutableThemingPreferencesSupplier
+    preferencesSupplier: ImmutableThemingPreferencesSupplierWithoutM3CustomColor
 ) {
     setTheme(themeStyleRes)
     preferencesSupplier.lightDarkMode.apply()
