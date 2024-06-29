@@ -32,6 +32,35 @@ fun Activity.applyTheming(
     } else {
         material3DynamicColorsThemeStyleRes
     }
+    applyThemingCommon(themeStyleRes, preferencesSupplier)
+}
+
+/**
+ * Version of [applyTheming] without a Material 3 custom colors theme.
+ * @param material2ThemeStyleRes Resource ID of your theme that extends [R.style.AppTheme_Material2].
+ * @param material3DynamicColorsThemeStyleRes Resource ID of your theme that extends
+ * [R.style.AppTheme_Material3_DynamicColors].
+ * @param preferencesSupplier Preference storage to use if available. If you're using the
+ * `preference-integration` extension library, see `Activity.applyThemingWithPreference` for more
+ * details
+ */
+fun Activity.applyThemingWithoutM3CustomColors(
+    @StyleRes material2ThemeStyleRes: Int,
+    @StyleRes material3DynamicColorsThemeStyleRes: Int,
+    preferencesSupplier: ImmutableThemingPreferencesSupplier
+) {
+    val themeStyleRes: Int = if (!preferencesSupplier.md3) {
+        material2ThemeStyleRes
+    } else {
+        material3DynamicColorsThemeStyleRes
+    }
+    applyThemingCommon(themeStyleRes, preferencesSupplier)
+}
+
+private fun Activity.applyThemingCommon(
+    @StyleRes themeStyleRes: Int,
+    preferencesSupplier: ImmutableThemingPreferencesSupplier
+) {
     setTheme(themeStyleRes)
     preferencesSupplier.lightDarkMode.apply()
     preferencesSupplier.themeColor.applyTo(theme)
