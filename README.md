@@ -81,6 +81,44 @@ public class MyActivity extends AppCompatActivity {
 }
 ```
 
-`ImmutableThemingPreferencesSupplier`s and `ImmutableThemingPreferencesSupplierWithoutM3CustomColor`s (or specifically their mutable counterparts, `ThemingPreferencesSupplier` and `ThemingPreferencesSupplierWithoutM3CustomColor`) can be created from `SharedPreferences` and `PreferenceDataStore` using [the preference integration library](https://gitlab.com/unbiaseduser/library-integrations/-/tree/master/theming-preference-integration?ref_type=heads).
+`ImmutableThemingPreferencesSupplier`s and `ImmutableThemingPreferencesSupplierWithoutM3CustomColor`s
+(or specifically their mutable counterparts, `ThemingPreferencesSupplier` and `ThemingPreferencesSupplierWithoutM3CustomColor`)
+can be created from `SharedPreferences` and `PreferenceDataStore` using [the preference integration library](https://gitlab.com/unbiaseduser/library-integrations/-/tree/master/theming-preference-integration?ref_type=heads).
 
 Of course, you can create custom implementations of those too.
+
+# Extras
+- Custom attributes that map to different styles depending on whether the theme currently used is M2 or M3:
+  + themeDependantTitleStyle
+  + themeDependantFilterChipStyle
+  + themeDependantInputChipStyle
+  + themeDependantSuggestionChipStyle
+  + themeDependantAssistChipStyle
+- "Fallback" themes to help with [fragment testing](https://developer.android.com/guide/fragments/test)
+in case any of the above attributes are used, as said themes allow to avoid having to redefine them.
+
+For example:
+
+Your theme:
+```xml
+<style name="MyAppTheme.Material2" parent="AppTheme.Material2">
+    <item name="yourCustomAttribute">foo</item>
+</style>
+```
+
+Your layout references `yourCustomAttribute` and one or more library attributes, in this case `themeDependantTitleStyle`.
+
+When it comes to fragment testing, your test theme instead of
+```xml
+<style name="MyAppTheme.Material2.Test" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <item name="yourCustomAttribute">foo</item>
+    <item name="themeDependantTitleStyle">@style/TextAppearance.AppCompat.Title</item>
+</style>
+```
+
+can simply be
+```xml
+<style name="MyAppTheme.Material2.Test" parent="AppTheme.Material2.Fallback">
+    <item name="yourCustomAttribute">foo</item>
+</style>
+```
