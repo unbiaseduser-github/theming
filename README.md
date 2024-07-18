@@ -10,6 +10,27 @@ Material 2 with *fixed* colors is not supported, since
 
 Material 3 with *only* custom colors is not supported, since one of its main selling points is the dynamic colors system. It would be strange to offer M3 without that.
 
+# Colors
+The following custom color schemes are supported:
+
+- Material 2
+  + Blue (primary color: #3385ff)
+  + Red (primary color: #d8260e)
+  + Green (primary color: #00c71e)
+  + Purple (primary color: #7700f6)
+  + Orange (primary color: #ff8800)
+  + Pink (primary color: #e700ef)
+
+- Material 3
+  + Blue (primary color: #005bc0)
+  + Red (primary color: #bc1400)
+  + Green (primary color: #006e0b)
+  + Purple (primary color: #7a0df9)
+  + Orange (primary color: #924c00)
+  + Pink (primary color: #a700ad)
+
+All other colors in a scheme (secondary colors, etc.) are derived from the primary colors mentioned above.
+
 # Usage
 Create a definition for each theme that inherits the library's:
 ```xml
@@ -61,4 +82,5 @@ public class MyActivity extends AppCompatActivity {
 ```
 
 `ImmutableThemingPreferencesSupplier`s and `ImmutableThemingPreferencesSupplierWithoutM3CustomColor`s (or specifically their mutable counterparts, `ThemingPreferencesSupplier` and `ThemingPreferencesSupplierWithoutM3CustomColor`) can be created from `SharedPreferences` and `PreferenceDataStore` using [the preference integration library](https://gitlab.com/unbiaseduser/library-integrations/-/tree/master/theming-preference-integration?ref_type=heads).
+
 Of course, you can create custom implementations of those too.
