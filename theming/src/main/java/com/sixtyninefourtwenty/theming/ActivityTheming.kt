@@ -26,14 +26,14 @@ fun Activity.applyTheming(
     @StyleRes material3DynamicColorsThemeStyleRes: Int,
     preferencesSupplier: ImmutableThemingPreferencesSupplier
 ) {
-    val themeStyleRes: Int = if (!preferencesSupplier.md3) {
-        material2ThemeStyleRes
-    } else if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.R || preferencesSupplier.useM3CustomColorThemeOnAndroid12) {
-        material3CustomColorsThemeStyleRes
-    } else {
-        material3DynamicColorsThemeStyleRes
-    }
-    applyThemingCommon(themeStyleRes, preferencesSupplier)
+    applyThemingCommon(
+        preferencesSupplier.determineTheme(
+            material2ThemeStyleRes,
+            material3CustomColorsThemeStyleRes,
+            material3DynamicColorsThemeStyleRes
+        ),
+        preferencesSupplier
+    )
 }
 
 /**
@@ -50,12 +50,13 @@ fun Activity.applyThemingWithoutM3CustomColors(
     @StyleRes material3DynamicColorsThemeStyleRes: Int,
     preferencesSupplier: ImmutableThemingPreferencesSupplierWithoutM3CustomColor
 ) {
-    val themeStyleRes: Int = if (!preferencesSupplier.md3) {
-        material2ThemeStyleRes
-    } else {
-        material3DynamicColorsThemeStyleRes
-    }
-    applyThemingCommon(themeStyleRes, preferencesSupplier)
+    applyThemingCommon(
+        preferencesSupplier.determineThemeWithoutM3CustomColors(
+            material2ThemeStyleRes,
+            material3DynamicColorsThemeStyleRes
+        ),
+        preferencesSupplier
+    )
 }
 
 private fun Activity.applyThemingCommon(
