@@ -152,5 +152,22 @@ can simply be
 </style>
 ```
 
+# Interesting tidbits
+One way to implement Material 3 custom colors theme is by calling:
+```kotlin
+val yourPrimaryColor: Int = getPrimaryColorInt()
+DynamicColors.applyToActivityIfAvailable(
+  activity,
+  DynamicColorsOptions.Builder()
+    .setContentBasedSource(yourPrimaryColor)
+    .build()
+)
+```
+The reason why this library doesn't use that method is because it indiscriminately applies colors
+regardless of whether the user wants to use Material 3 or Material 2 theme, and there's no way to
+"revert" this.
+
+Which means that, yes, you *can* have a Material 2 theme with dynamic colors. You're welcome!
+
 # Credits
 Thanks to [Material Files](https://github.com/zhanghai/MaterialFiles) for inspiration.
