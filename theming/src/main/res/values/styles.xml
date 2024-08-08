@@ -203,6 +203,7 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="textAllCaps">false</item>
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
+        <item name="windowActionModeOverlay">true</item>
 
         <item name="themeDependantTitleStyle">@style/TextAppearance.AppCompat.Title</item>
         <item name="themeDependantFilterChipStyle">@style/Widget.MaterialComponents.Chip.Filter</item>
@@ -232,6 +233,7 @@
     <style name="AppTheme.Material3.Base" parent="Theme.Material3.DynamicColors.DayNight">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
 
         <item name="themeDependantTitleStyle">@style/TextAppearance.MaterialComponents.Headline5</item>
         <item name="themeDependantFilterChipStyle">@style/Widget.Material3.Chip.Filter</item>
