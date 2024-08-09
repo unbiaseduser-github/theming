@@ -37,8 +37,10 @@ This library allows app developers to make their apps feel "at home" with older 
 while still letting users use the latest Material 3 theme if they desire.
 
 # Colors
-Each custom color scheme has a light mode and a dark mode variant. The color listed on the left
-is the one used in light mode, the one on the right for the dark mode.
+Each custom color scheme has a light mode and a dark mode variant.
+- Material 2: The color listed on the left is the one used in light mode, the one on the right for the dark mode.
+- Material 3: The "seed" color is used to generate light and dark mode colors on
+https://material-foundation.github.io/material-theme-builder/.
 
 The following custom color schemes are supported:
 
@@ -51,14 +53,15 @@ The following custom color schemes are supported:
   + Pink (primary color: #e700ef/#f390f6)
 
 - Material 3
-  + Blue (primary color: #005bc0/#adc6ff)
-  + Red (primary color: #bc1400/#ffb4a6)
-  + Green (primary color: #006e0b/#3de43c)
-  + Purple (primary color: #7a0df9/#d4bbff)
-  + Orange (primary color: #924c00/#ffb781)
-  + Pink (primary color: #a700ad/#ffaaf7)
+  + Blue (seed color: #005bc0)
+  + Red (seed color: #bc1400)
+  + Green (seed color: #006e0b)
+  + Purple (seed color: #7a0df9)
+  + Orange (seed color: #924c00)
+  + Pink (seed color: #a700ad)
 
-All other colors in a scheme (secondary colors, etc.) are derived from the primary colors mentioned above.
+For Material 2, all other colors in a scheme (secondary colors, etc.) are derived from the primary
+colors mentioned above.
 
 # Usage
 Create a definition for each theme that inherits the library's:
@@ -83,7 +86,7 @@ In your `Activity` subclass, call `applyTheming` or `applyThemingWithoutM3Custom
 class MyActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
-        val preferences: ImmutableThemingPreferencesSupplier
+        val preferences: ImmutableThemingPreferencesSupplier = getMyPreferencesSupplier()
         applyTheming(
             material2ThemeStyleRes = R.style.MyAppTheme_Material2,
             material3CustomColorsThemeStyleRes = R.style.MyAppTheme_Material3_CustomColors,
@@ -155,11 +158,11 @@ can simply be
 # Interesting tidbits
 One way to implement Material 3 custom colors theme is by calling:
 ```kotlin
-val yourPrimaryColor: Int = getPrimaryColorInt()
+val yourSeedColor: Int = getSeedColorInt()
 DynamicColors.applyToActivityIfAvailable(
   activity,
   DynamicColorsOptions.Builder()
-    .setContentBasedSource(yourPrimaryColor)
+    .setContentBasedSource(yourSeedColor)
     .build()
 )
 ```
