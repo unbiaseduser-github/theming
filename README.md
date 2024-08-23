@@ -4,10 +4,10 @@ It consists of 3 parts:
 
 - Core: The base of the lib, hosted in this repository. Consists of model classes and the core 
 "apply theme to activity" logic.
-- Preference: Integration with the AndroidX Preference library. Allows adding preference UI that
-controls aspects of the theming preferences. Hosted in [this repository](https://gitlab.com/unbiaseduser/library-integrations/-/tree/master/theming-preference-integration?ref_type=heads).
-- Custom preferences: Integration with the [custom-preferences](https://gitlab.com/unbiaseduser/custom-preferences)
-library. Provides Material 3 themes for the preference UI supplied by said library.
+- Preference + custom preferences: Integration with the AndroidX Preference library and the
+[custom-preferences](https://gitlab.com/unbiaseduser/custom-preferences) library. Allows adding
+preference UI that controls aspects of the theming preferences and provides Material 3 themes for
+the preference UI of both libraries. Hosted in [this repository](https://gitlab.com/unbiaseduser/custom-preferences-theming-integration)
 
 These use cases are supported:
 - Material 2 with custom colors + Material 3 with dynamic colors
@@ -39,8 +39,9 @@ while still letting users use the latest Material 3 theme if they desire.
 # Colors
 Each custom color scheme has a light mode and a dark mode variant.
 - Material 2: The color listed on the left is the one used in light mode, the one on the right for the dark mode.
-- Material 3: The "seed" color is used to generate light and dark mode colors on
-https://material-foundation.github.io/material-theme-builder/.
+- Material 3: The "seed" color is used to generate light and dark mode colors on [Google's theme generator]
+(https://material-foundation.github.io/material-theme-builder/). The generated files are punched into
+[the helper app](https://gitlab.com/unbiaseduser/theming-helper).
 
 The following custom color schemes are supported:
 
@@ -103,6 +104,7 @@ public class MyActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         ImmutableThemingPreferencesSupplier preferences;
         ActivityTheming.applyTheming(
+                this,
                 R.style.MyAppTheme_Material2,
                 R.style.MyAppTheme_Material3_CustomColors,
                 R.style.MyAppTheme_Material3_DynamicColors,
@@ -115,7 +117,7 @@ public class MyActivity extends AppCompatActivity {
 
 `ImmutableThemingPreferencesSupplier`s and `ImmutableThemingPreferencesSupplierWithoutM3CustomColor`s
 (or specifically their mutable counterparts, `ThemingPreferencesSupplier` and `ThemingPreferencesSupplierWithoutM3CustomColor`)
-can be created from `SharedPreferences` and `PreferenceDataStore` using [the preference integration library](https://gitlab.com/unbiaseduser/library-integrations/-/tree/master/theming-preference-integration?ref_type=heads).
+can be created from `SharedPreferences` and `PreferenceDataStore` using the preference integration library mentioned above.
 
 Of course, you can create custom implementations of those too.
 
