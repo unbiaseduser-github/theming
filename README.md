@@ -1,3 +1,5 @@
+[![jitpack badge](https://jitpack.io/v/unbiaseduser-github/theming.svg)](https://jitpack.io/#unbiaseduser-github/theming)
+
 This library aims to make implementing Material 2 and Material 3 themes into an Android app as painless as possible.
 
 It consists of 3 parts:
