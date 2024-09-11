@@ -338,7 +338,6 @@
     </style>
 
     <style name="AppTheme.Material2.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <item name="textAllCaps">false</item>
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
         <item name="windowActionModeOverlay">true</item>
