@@ -371,6 +371,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionModeOverlay">true</item>
+        <item name="android:spinnerStyle">@style/Spinner.Material3</item>
 
         <item name="themeDependantTitleStyle">@style/TextAppearance.MaterialComponents.Headline5</item>
         <item name="themeDependantFilterChipStyle">@style/Widget.Material3.Chip.Filter</item>
@@ -481,6 +482,11 @@
 
     <style name="AlertDialogTheme.Material3" parent="ThemeOverlay.Material3.MaterialAlertDialog">
         <item name="dialogCornerRadius">36dp</item>
+    </style>
+
+    <style name="Spinner.Material3" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/spinner_background_m3</item>
+        <item name="android:popupBackground">?popupMenuBackground</item>
     </style>
 
 </resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingMode="stack"
+    android:paddingStart="0dp"
+    android:paddingEnd="48dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp">
+
+    <item>
+        <shape>
+            <solid android:color="?colorSurfaceContainerHigh"/>
+            <corners android:radius="@dimen/m3_chip_corner_size"/>
+        </shape>
+    </item>
+
+    <item
+        android:gravity="end|center_vertical"
+        android:width="40dp"
+        android:height="40dp"
+        android:end="4dp"
+        android:drawable="@drawable/selectable_item_background_oval"/>
+
+    <item
+        android:drawable="@drawable/arrow_drop_down"
+        android:gravity="end|center_vertical"
+        android:width="24dp"
+        android:height="24dp"
+        android:end="12dp" />
+
+</layer-list>
