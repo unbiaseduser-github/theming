@@ -480,10 +480,6 @@
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest_435E91</item>
     </style>
 
-    <style name="AlertDialogTheme.Material3" parent="ThemeOverlay.Material3.MaterialAlertDialog">
-        <item name="dialogCornerRadius">36dp</item>
-    </style>
-
     <style name="Spinner.Material3" parent="Widget.AppCompat.Spinner">
         <item name="android:background">@drawable/spinner_background_m3</item>
         <item name="android:popupBackground">?popupMenuBackground</item>
