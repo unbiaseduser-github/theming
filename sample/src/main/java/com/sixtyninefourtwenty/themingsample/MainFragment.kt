@@ -1,6 +1,7 @@
 package com.sixtyninefourtwenty.themingsample
 
 import android.os.Bundle
+import android.widget.Spinner
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.preference.Preference
@@ -13,6 +14,9 @@ class MainFragment : PreferenceFragmentCompat() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         val context = requireContext()
         val themingPreferences = MyApplication.get(context).themingPreferences
+        val m3ThemedComponents = PreferenceCategory(context).apply {
+            title = "Material 3 themed components"
+        }
         val m3Onm2Category = PreferenceCategory(context).apply {
             title = "Material 3 components on Material 2 themes"
         }
@@ -27,6 +31,30 @@ class MainFragment : PreferenceFragmentCompat() {
                     true
                 }
             })
+            addPreference(m3ThemedComponents)
+            with(m3ThemedComponents) {
+                addPreference(Preference(context).apply {
+                    title = Spinner::class.java.simpleName
+                    setOnPreferenceClickListener {
+                        if (!themingPreferences.md3) {
+                            MaterialAlertDialogBuilder(context)
+                                .setMessage("Not using Material 3 theme. Set theme to Material 3 now?")
+                                .setPositiveButton(android.R.string.ok) { _, _ ->
+                                    themingPreferences.md3 = true
+                                    requireActivity().recreate()
+                                }
+                                .setNegativeButton(android.R.string.cancel, null)
+                                .show()
+                            return@setOnPreferenceClickListener true
+                        }
+                        requireActivity().supportFragmentManager.commit {
+                            replace<SpinnerFragment>(R.id.fragment_container)
+                            addToBackStack(null)
+                        }
+                        true
+                    }
+                })
+            }
             addPreference(m3Onm2Category)
             with(m3Onm2Category) {
                 addPreference(Preference(context).apply {
