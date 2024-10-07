@@ -342,4 +342,9 @@
         <item name="android:popupBackground">?popupMenuBackground</item>
     </style>
 
+    <style name="SearchBar.Material2" parent="Widget.Material3.SearchBar">
+        <item name="shapeAppearance">?shapeAppearanceSmallComponent</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.M3.Sys.Shape.Corner.Small</item>
+    </style>
+
 </resources>
