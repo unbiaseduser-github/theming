@@ -1,8 +1,9 @@
 [![jitpack badge](https://jitpack.io/v/unbiaseduser-github/theming.svg)](https://jitpack.io/#unbiaseduser-github/theming)
 
-This library aims to make implementing Material 2 and Material 3 themes into an Android app as painless as possible.
+Library that aims to make implementing Material 2 *and* Material 3 themes into an Android app as painless as possible.
+Also contains common theme configurations for all my apps - change it to your liking!
 
-It consists of 3 parts:
+It consists of 2 parts:
 
 - Core: The base of the lib, hosted in this repository. Consists of model classes and the core 
 "apply theme to activity" logic.
