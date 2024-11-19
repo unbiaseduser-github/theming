@@ -1,3 +1,9 @@
+## 2.4.0
+- Add Material 2 `SearchBar` theme
+- Add method to determine Material version of theme
+- Add ability to use Material 3 components in library Material 2 themes
+- Tweak spinner item layout
+
 ## 2.3.3
 - Add Material 3 spinner theme
 - Remove unused alert dialog theme
